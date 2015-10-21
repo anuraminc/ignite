@@ -80,36 +80,31 @@
             site_data_fetch();
         });
         
-        function site_data_fetch() {
-            //$(".editStaffForm #staff_cost_centre_id > option").remove(); //first of all clear select items
+    function site_data_fetch() {
+        $('#site_search_text').val($('#site_search_text').val().trim());
+        var whereClause = $('#site_search_by').val()
+                + "_" + $('#site_search_text').val();
 
-		//var bu_id = $('.editStaffForm #staff_bus_unit_id').val();  // here we are taking country id of the selected one.
-		//$("#editarea").html("hi");
-                //mcp.newDoc();
-                $('#site_search_text').val($('#site_search_text').val().trim());
-                var whereClause = $('#site_search_by').val()
-                        + "_" + $('#site_search_text').val();
-                
-                $.blockUI({ message: null });
-                
-		$.ajax({
-			type: "POST",
-			url: "<?=$fullurl?>site/get_site_data/"+whereClause, //here we are calling our user controller and get_cities method with the country_id
-	
-			success: function(outcome) //we're calling the response json array 'cities'
-			{ 
+        $.blockUI({ message: null });
+
+        $.ajax({
+                type: "POST",
+                url: "<?=$fullurl?>site/get_site_data/"+whereClause, //here we are calling our user controller and get_cities method with the country_id
+
+                success: function(outcome) //we're calling the response json array 'cities'
+                { 
 //                            if(outcome == "")
 //                                mcp.loadData("; some example nodes\n venkat {color:red, label:VENKAT}\nworld {color:blue, link:'http://www.google.com',shape:dot}\n\n; some edges\nvenkat -> world");
 //                            else {
-                                graphData = outcome;
-                                mcp.loadData(graphData);
-                            //}
-                            $.unblockUI();
-			}, error: function(returnval) { 
-                            window.status = returnval;
-                            $.unblockUI();
-                        }
-                });
+                        graphData = outcome;
+                        mcp.loadData(graphData);
+                    //}
+                    $.unblockUI();
+                }, error: function(returnval) { 
+                    window.status = returnval;
+                    $.unblockUI();
+                }
+        });
         }
 
 });
