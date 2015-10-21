@@ -1,0 +1,17 @@
+# Remove codeignitor index.php
+RewriteEngine on
+
+# Checks to see if the user is attempting to access a valid file, such as an image or css document, if this isn’t true it sends the request to index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Enables access to the images and css folders, and the robots.txt file
+RewriteCond $1 !^(index\.php|data|includes|images|uploads|robots\.txt|favicon\.ico)
+
+RewriteRule ^(.*)$ /ignite/index.php/$1 [L]
+
+# Prevent acess to .htaccess file
+RewriteRule ^/?\.htaccess$ - [F] 
+
+# Prevent directory listing
+Options -Indexes

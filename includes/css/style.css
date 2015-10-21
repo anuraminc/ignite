@@ -1,0 +1,116 @@
+/* 
+    Document   : style
+    Created on : Apr 4, 2013, 12:02:24 AM
+    Author     : Venkat
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+body {
+    background: space;
+    box-shadow: inset 0px 10px 60px 0px rgba(0,0,0,0.7);
+    background-image: url("../images/nav_bg.png");
+    background-repeat: repeat-x;
+    color:white;
+}
+
+#login_body
+{
+   background-image: url("../images/background-03.jpg");
+}
+
+#errmsg {
+    
+    font-family: Verdana;
+    font-size: 11px;
+    color: red;
+    font-weight: bold;
+}
+
+#login_form_container 
+{
+    position: relative;
+    width: 250px;
+    height: 300px;
+    top: 200px;
+    padding: 20px;
+    clear: both;
+    font-family: Verdana;
+    font-size: 14px;
+    
+}
+#login_form_container input
+{
+    box-sizing: border-box;
+    box-shadow: inset 0px 10px 60px 0px rgba(0,0,0,0.7);
+    font-size: 18px;
+    width: 210px;
+    background-color: #FFFFFF;
+    border: 1px solid #e13300;
+}
+
+#login_form_container input[type="submit"]
+{
+    box-sizing: border-box;
+    box-shadow: inset 0px 10px 60px 0px rgba(0,0,0,0.7);
+    font-size: 18px;
+    width: 100px;
+    border: 1px #99BC99 solid;
+    background-color: transparent;
+    font-family: Verdana;
+    color: gold;
+}
+
+#login_form_container input[type="reset"]
+{
+    box-sizing: border-box;
+    box-shadow: inset 0px 10px 60px 0px rgba(0,0,0,0.7);
+    font-size: 18px;
+    width: 100px;
+    border: 1px #99BC99 solid;
+    background-color: transparent;
+    font-family: Verdana;
+    color: gold;
+}
+
+#copyright
+{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 10px;
+}
+
+#site_search {
+    font: 13px Verdana;
+    position: absolute;
+    left: 10px;
+    top: 60px;
+}
+
+#site_search select, input {
+    font: 13px Verdana;
+}
+
+#app_header {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Trebuchet MS;
+    text-align: center;
+}
+
+#apps_jtrac_search {
+    font: 13px Verdana;
+    position: absolute;
+    left: 10px;
+    top: 60px;
+}
+
+#apps_jtrac_search select, input {
+    font: 13px Verdana;
+}

@@ -1,0 +1,92 @@
+
+; Status of MROSS 7.5
+SS {label:MROSS,color:#444, shape:dot}
+
+; Headers
+{color:#2f539f}
+
+APP {label:Apps}
+WF {label:Workflow}
+RPT {label:Reports}
+INT {label:Integration}
+INF {label:Interface}
+SYS {label:System}
+
+; Not Started
+{color:#b01700}
+
+APPINV {label:Invoicing}
+
+WFPARENT {label:Parent Job}
+WFIWR {label:IWR Job}
+WFADDJOB {label:Add Job}
+WFRFW {label:RFW Job}
+
+INTCFRAS {label:CFRAS}
+INTSNCA {label:SNCA}
+
+INFWO {label:WO Interface}
+INFIWR {label:IWR Interface}
+
+SYSINT {label:Setup}
+SYSOS {label:OS Optimization}
+SYSDB {label:DB Optimization}
+SYSWAS {label:WAS Optimization}
+SYSWASCL {label:WAS Clustering}
+
+; WIP
+{color:#db8e3c}
+
+APPCRM {label:CRM}
+APPRFWCF {label:RFW CF}
+APPEST {label:Estimation}
+APPWSHOP {label:Workshop}
+APPQA {label:QA}
+
+INTDASHBOARD {label:Dashboard}
+
+INFRFQ {label:RFQ Interface}
+INFPO {label:PO Interface}
+INFINV {label:Inventory}
+
+
+; Completed
+{color:#95cde5}
+
+
+{color:none}
+
+SS -> WF
+SS -> APP
+SS -> INT
+SS -> RPT
+SS -> INF
+SS -> SYS
+
+WF -> WFPARENT
+WF -> WFIWR
+WF -> WFADDJOB
+WF -> WFRFW
+
+APP -> APPCRM
+APP -> APPRFWCF
+APP -> APPEST
+APP -> APPWSHOP
+APP -> APPQA
+APP -> APPINV
+
+INT -> INTCFRAS
+INT -> INTSNCA
+INT -> INTDASHBOARD
+
+INF -> INFPO
+INF -> INFRFQ
+INF -> INFWO
+INF -> INFINV
+INF -> INFIWR
+
+SYS -> SYSOS
+SYS -> SYSDB
+SYS -> SYSWAS
+SYS -> SYSWASCL
+SYS -> SYSINT
