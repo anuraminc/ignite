@@ -66,6 +66,7 @@
     mcp.loadData(graphData);
   });
    
+   //Universal Search Funcationlity
   $(document).ready(function (){
       
         $('#site_search_by').change(function(){
